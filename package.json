@@ -1,0 +1,14 @@
+{
+  "name": "movisafe-control",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "preview": "python3 -m http.server 8080 --directory web --bind 127.0.0.1",
+    "check": "node --check web/data.js && node --check web/app.js",
+    "build": "npm run check && node scripts/build.mjs",
+    "test": "node --test --test-concurrency=1 tests/browser.test.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.65.1"
+  }
+}
